@@ -98,5 +98,5 @@
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
 		<div class="row">
-			<div id="content" class="main-content-inner col-sm-12">
+			<div id="content" class="main-content-inner col-sm-12 col-md-10">
 

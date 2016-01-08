@@ -15,12 +15,11 @@
 get_header(); ?>
 
 <?php 
-$now = date("Y-m-d G:i:s");
+    $now = date("Y-m-d");
 
 $proj_events = tribe_get_events( array(
-		'posts_per_page' => 3,
-		'start_date'     => date( 'Y-m-d H:i:s', strtotime( $now ) ),
-		'end_date'       => date( 'Y-m-d H:i:s', strtotime( $now ) ),
+		'start_date'     => date( 'Y-m-d' . 'T01:00:00'),
+		'end_date'       => date( 'Y-m-d' . 'T23:59:59'),
 		'eventDisplay'   => 'custom',
 		'posts_per_page' => -1
 		//'eventDisplay' => 'list' // only upcoming
@@ -33,7 +32,9 @@ $proj_events = tribe_get_events( array(
 			<?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 				<div class="col-md-4">
 					<?php the_post_thumbnail('medium',array( 'class' => 'img-responsive' ));?>
-					<a href="<?php the_permalink(); ?>"><div class="carousel-caption"><h1><?php the_title(); ?></h1></div></a> <span class="entry-meta"><?php echo tribe_get_start_date( null, true, 'g:ia, F j' ); ?></span>
+					<a href="<?php the_permalink(); ?>"><div class="carousel-caption"><h1><?php the_title(); ?></h1>
+					<span class="entry-meta">@ <?php echo tribe_get_venue(); ?></span>
+					</div></a> 
 					</div>
 			<?php endwhile; ?>
 		</div>
@@ -47,7 +48,6 @@ $proj_events = tribe_get_events( array(
 $now = date("Y-m-d G:i:s");
 
 $proj_events = tribe_get_events( array(
-		'posts_per_page' => 3,
 		'start_date'     => date( 'Y-m-d H:i:s', strtotime( '+1 day') ),
 		'end_date'       => date( 'Y-m-d H:i:s', strtotime( '+1 week' ) ),
 		'eventDisplay'   => 'custom',
@@ -64,7 +64,9 @@ $proj_events = tribe_get_events( array(
 			<?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 				<div class="col-md-3">
 					<?php the_post_thumbnail('medium',array( 'class' => 'img-responsive' ));?>
-					<a href="<?php the_permalink(); ?>"><div class="carousel-caption"><h1><?php the_title(); ?></h1></div></a> <span class="entry-meta"><?php echo tribe_get_start_date( null, true, 'g:ia, F j' ); ?></span>
+					<a href="<?php the_permalink(); ?>"><div class="carousel-caption"><h3><?php the_title(); ?></h3>
+					<span class="entry-meta">@ <?php echo tribe_get_venue(); ?></span>
+					</div></a> 
 					</div>
 			<?php endwhile; ?>
 		</div>

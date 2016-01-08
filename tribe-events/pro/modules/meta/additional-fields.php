@@ -32,8 +32,6 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 			<!-- Twitter button  and search display (generic at the moment)-->
 			 <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="<?php tribe_get_events_link() ?>" data-text="I'm at <?php the_title();?>" data-via="RVA2Z" data-size="large" data-hashtags="rvarts, <?php echo $value;?> ">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<a class="twitter-timeline" href="https://twitter.com/hashtag/rvarts" data-widget-id="684094335009320960">#rvarts Tweets</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		<?php endforeach ?>
 	</dl>
 </div>

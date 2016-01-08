@@ -314,6 +314,10 @@ event calendar specific
 	background-color: #2EAEBF;
 }
 
+.tribe-events-single-event-venue, .tribe-events-single-event-title {
+	display: inline-block;
+}
+
 /*
 nav bar
 */

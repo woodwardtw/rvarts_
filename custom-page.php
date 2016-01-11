@@ -43,7 +43,7 @@ $proj_events = tribe_get_events( array(
 		            <div class="col-md-4 col-xs-12">
 			            <div class="front-card">
 			                <a href="<?php the_permalink(); ?>"> 
-			                <?php the_post_thumbnail('front-page-thumb',array( 'class' => 'img-front front-page-thumb' ));?>
+			                <?php the_post_thumbnail('medium',array( 'class' => 'img-front front-page-thumb' ));?>
 			                </a>
 			                <a href="<?php the_permalink(); ?>"> 
 			                <div class="row front-date-row">
@@ -60,7 +60,9 @@ $proj_events = tribe_get_events( array(
 			                        	echo substr(the_title($before = "", $after = "", FALSE),0, 35);?> 			                        	
 			                        	<br>
 			                        <span class="front-location">
-			                        <?php echo tribe_get_full_address(); ?></span>
+			                        Today - <?php echo tribe_get_start_date(null, true, 'h:i:A'); ?> - <?php echo tribe_get_full_address(); ?>
+			                        </span>
+
 
 			                    </div>
 			                </div>
@@ -103,7 +105,7 @@ $proj_events = tribe_get_events( array(
 	?>
 <div class="container">
 	<div class="row">	
-		<h3><?php echo $countposts; ?> Events This Week</h3>
+		<h3>Upcoming Events This Week</h3>
 		<?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 		<div class="col-md-2">
 			<div class="front-card">
@@ -120,7 +122,7 @@ $proj_events = tribe_get_events( array(
 		                    <?php echo tribe_get_start_date(null, false, 'M');?>
 		                </div>
 		            </div>
-		            <div class="col-md-12 front-event-title">
+		            <div class="col-md-12 front-event-title small">
 		                	<?php echo substr(the_title($before = "", $after = "", FALSE),0, 20);?><br>
 		                <span class="front-location">
 		                    <?php echo tribe_get_full_address(); ?>

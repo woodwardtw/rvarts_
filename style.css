@@ -309,7 +309,6 @@ front page
 	border:1px solid #efefef;
 	padding-left: 15px;
 	margin-left:10px;
-	height:325px;
 }
 
 
@@ -348,7 +347,7 @@ front page
 	display:none;
 }
 
-.front-location .tribe-address, .front-location .tribe-address a {
+.front-location .tribe-address, .front-location .tribe-address a, .front-location, .front-location a {
 	font-size: .9em;
 	font-color:#efefef;
 	font-weight: 300;
@@ -357,6 +356,7 @@ front page
 .front-card {
 	border: 1px solid #efefef;
 	margin:7px;
+	background-color: #F8F8F8;
 }
 
 .front-date {
@@ -381,6 +381,9 @@ front page
 	background-color:rgba(255, 255, 255, 0.6); 
 }
 
+.small {
+	text-align: center;
+}
 
 @media(max-width:767px){
 
@@ -401,6 +404,7 @@ front page
 
 }
 
+
 /*
 event calendar specific
 */
@@ -419,15 +423,62 @@ event calendar specific
     background-color: #2EAEBF;
 }
 
-.tribe-events-single-section-title {
-	font-size: 1.5em;
-	color:#fff;
-	padding:5px;
-	background-color: #2EAEBF;
-}
+
 
 .tribe-events-single-event-venue, .tribe-events-single-event-title {
 	display: inline-block;
+}
+
+/*
+single page specific
+*/
+.tribe-events-event-image img {
+	padding: 7px;
+	border: 1px solid #efefef;
+}
+
+.review {
+		margin:5px;
+		padding-bottom: 20px;
+		border-bottom: 2px solid #efefef;
+}
+
+.review img {
+	padding: 7px;
+	border: 1px solid #efefef;
+	
+	margin-left:-15px;
+}
+
+.tweet-height{
+	height:200px;
+	text-align: top;
+}
+
+.tweet-term {
+	font-variant: 800;
+	font-size: 1.4em;
+}
+
+
+.review h3{
+	font-size: 1.2em;
+}
+
+.review h3, .review-excerpt {
+	display: inline-block;
+	width: 85%;
+	color:#666;
+}
+
+
+
+.tribe-events-single-section-title {
+	font-size: 1.5em;
+	color:#666;
+	padding:5px;
+	border-bottom: 2px solid #efefef;
+	text-transform: uppercase;
 }
 
 /*

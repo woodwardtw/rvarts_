@@ -22,21 +22,23 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 	<dl>
 		<?php foreach ( $fields as $name => $value ): ?>
 			<dt>  </dt>
-			<dd class="tribe-meta-value">
-				<?php
-				// This can hold HTML. The values are cleansed upstream
-				echo "#".$value;
-				?>
-			</dd>
+			<dd class="tribe-meta-value tweet-height">
 
 			<!-- Twitter button  and search display (generic at the moment)-->
 			 <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="<?php tribe_get_events_link() ?>" data-text="I'm at <?php the_title();?>" data-via="RVA2Z" data-size="large" data-hashtags="rvarts, <?php echo $value;?> ">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<div class="tweet-term">
+				<?php
+				// This can hold HTML. The values are cleansed upstream
+				echo "#".$value;
+				?>
+				</div>
+			</dd>
+
 		<?php endforeach ?>
 	</dl>
 </div>
-
-<div class="tribe-events-meta-group tribe-events-meta-group-details">
+<div class="tribe-events-meta-group tribe-events-meta-group-details col-md-3">
 	<h3 class="tribe-events-single-section-title"> Reviews </h3>
 		<dl>
 			<dd class="tribe-meta-value">
@@ -79,8 +81,8 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
 							echo '<a href="' . get_the_permalink() . '"><div class="review">';
-							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<h3>' . get_the_title() . '</h3>' . get_the_excerpt();
-							echo '</div></a>';
+							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="review_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
+							echo '</div></div></a>';
 						}
 					} else {
 						// no posts found
@@ -137,7 +139,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
 							echo '<a href="' . get_the_permalink() . '"><div class="review">';
-							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<h3>' . get_the_title() . '</h3>' . get_the_excerpt();
+							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="review_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
 							echo '</div></a>';
 
 						}
@@ -194,7 +196,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 						while ( $the_query->have_posts() ) {
 							$the_query->the_post();
 							echo '<a href="' . get_the_permalink() . '"><div class="review">';
-							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<h3>' . get_the_title() . '</h3>' . get_the_excerpt();
+							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="review_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
 							echo '</div></a>';
 						}
 					} else {

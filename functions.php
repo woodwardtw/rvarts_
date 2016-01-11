@@ -20,7 +20,9 @@ if ( ! function_exists( '_tk_setup' ) ) :
  * support post thumbnails.
  */
 
- 
+add_image_size( 'front-page-thumb', 555, 312, true );
+
+
 function _tk_setup() {
 	global $cap, $content_width;
 

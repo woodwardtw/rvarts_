@@ -34,6 +34,8 @@ $event_id = get_the_ID();
 	<h2 class="tribe-events-single-event-venue">@ <?php echo tribe_get_venue(); ?></h2>
 	<div class="tribe-events-schedule tribe-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
+		<!--for the jetpack plugin that won't work locally	<?php //echo sharing_display(); ?>-->
+
 		<?php if ( tribe_get_cost() ) : ?>
 			<span class="tribe-events-divider">|</span>
 			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>

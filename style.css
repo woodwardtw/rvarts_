@@ -290,6 +290,118 @@ a {
 }
 
 /*
+single page stuff
+*/
+
+.tribe-events-schedule {
+	margin-top: -20px;
+	color:rgba(0,0,0,.7);
+}
+
+.tribe-events-schedule h2{
+	font-size: 1.3em;
+}
+
+/*
+front page
+*/
+.front-grid{
+	border:1px solid #efefef;
+	padding-left: 15px;
+	margin-left:10px;
+	height:325px;
+}
+
+
+.img-front{
+	padding:10px;
+}
+
+.front-caption h3 {
+	margin-top: 8px;
+}
+
+.front-day, .front-day a {
+	color:#000;
+	font-size:1.5em;
+	text-align: center;
+	padding-top:5px;
+	padding-left: 11px;
+
+}
+
+.front-month, .front-month a {
+	font-size:1em;
+	text-transform: uppercase;
+	text-align: center;
+	padding-left: 8px;
+}
+
+.front-event-title, .front-event-title a{
+	color:#000;
+	font-size:1.1em;
+	padding-top: 8px;
+	font-weight: 900;
+}
+
+.front-location .tribe-country-name, .front-location .tribe-region, .front-location .tribe-locality, .front-location .tribe-delimiter, .front-location .tribe-postal-code {
+	display:none;
+}
+
+.front-location .tribe-address, .front-location .tribe-address a {
+	font-size: .9em;
+	font-color:#efefef;
+	font-weight: 300;
+}
+
+.front-card {
+	border: 1px solid #efefef;
+	margin:7px;
+}
+
+.front-date {
+	padding-right: 5px;
+	padding-left: 0;
+}
+
+.front-date-row {
+	line-height: 1.1;
+	padding-bottom: 20px;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.week .front-date {
+	margin-top:-90px;
+	background-color:rgba(255, 255, 255, 0.6); 
+}
+
+
+@media(max-width:767px){
+
+	.front-event-title, .front-event-title a{
+		text-align: center;
+	}
+
+	.week .front-date {
+	margin-top:-100px;
+}
+	.week {
+			margin-left: -100px;
+	}
+
+	.week .front-location, .week .front-event-title ,.week .front-event-title a, .week .front-date {
+			background-color:rgba(255, 255, 255, 0.6); 
+	}
+
+}
+
+/*
 event calendar specific
 */
 .tribe-events-notices {

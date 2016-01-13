@@ -37,7 +37,8 @@ $proj_events = tribe_get_events( array(
 	if( $proj_events->have_posts()) :
 	?>
 
-	<div class="container" title="content">
+	<div class="container front" title="content">
+	<h2>TODAY</h2>
 	        <div class="row">
 	            <?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 		            <div class="col-md-4 col-xs-12">
@@ -70,7 +71,6 @@ $proj_events = tribe_get_events( array(
 			            </div>
 		            </div>
 		        <?php endwhile; ?>
-	        </div>
 	    </div>
 
 	<?php else: ?>
@@ -103,12 +103,12 @@ $proj_events = tribe_get_events( array(
 	    $countposts = $proj_events->found_posts;
 
 	?>
-<div class="container">
+<div class="container front">
 	<div class="row">	
-		<h3>Upcoming Events This Week</h3>
+		<h2>THIS WEEK</h2>
 		<?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 		<div class="col-md-2">
-			<div class="front-card">
+			<div class="front-card small">
 			<a href="<?php the_permalink(); ?>"> 
 		    	<?php the_post_thumbnail('thumbnail',array( 'class' => 'img-front' ));?>
 		    </a>
@@ -122,7 +122,7 @@ $proj_events = tribe_get_events( array(
 		                    <?php echo tribe_get_start_date(null, false, 'M');?>
 		                </div>
 		            </div>
-		            <div class="col-md-12 front-event-title small">
+		            <div class="col-md-12 front-event-title ">
 		                	<?php echo substr(the_title($before = "", $after = "", FALSE),0, 20);?><br>
 		                <span class="front-location">
 		                    <?php echo tribe_get_full_address(); ?>

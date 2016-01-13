@@ -359,6 +359,7 @@ front page
 	background-color: #F8F8F8;
 }
 
+
 .front-date {
 	padding-right: 5px;
 	padding-left: 0;
@@ -383,7 +384,14 @@ front page
 
 .small {
 	text-align: center;
+	height:230px;
 }
+
+
+.front h2 {
+	color: #E11936;
+}
+
 
 @media(max-width:767px){
 
@@ -402,6 +410,7 @@ front page
 			background-color:rgba(255, 255, 255, 0.6); 
 	}
 
+	
 }
 
 
@@ -484,48 +493,31 @@ single page specific
 /*
 nav bar
 */
+.navbar {
+	background-color: #E11936;
+	color: #fff;
+}
 
-.navbar-harvest .navbar-inner {
-background: #f36c00;
-background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f68a28), color-stop(100%, #f36c00));
-background: -webkit-linear-gradient(top, #f68a28,#f36c00);
-background: -moz-linear-gradient(top, #f68a28,#f36c00);
-background: -o-linear-gradient(top, #f68a28,#f36c00);
-background: -ms-linear-gradient(top, #f68a28,#f36c00);
-background: linear-gradient(top, #f68a28,#f36c00);
+.navbar-inverse .navbar-nav>li>a{
+	color: #fff;
 }
-.navbar-harvest .navbar-inner .nav {
-float: right;
+
+.navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border:1px solid #E11936;
 }
-.navbar-harvest .brand {
-color: #fff;
-text-shadow: none;
-padding-top: 20px;
-padding-bottom: 20px;
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+	background-color: #fff;
+	color:#E11936;
+	border-bottom: 1px solid #E11936;
 }
-.navbar-harvest .navbar-inner .nav li a {
-color: #fff;
-padding-top: 20px;
-padding-bottom: 20px;
-text-shadow: none;
-background: none;
--webkit-box-shadow: none;
--moz-box-shadow: none;
-box-shadow: none;
--webkit-transition: background 0.1s linear,opacity 0.1s linear;
--moz-transition: background 0.1s linear,opacity 0.1s linear;
--ms-transition: background 0.1s linear,opacity 0.1s linear;
--o-transition: background 0.1s linear,opacity 0.1s linear;
-transition: background 0.1s linear,opacity 0.1s linear;
--webkit-font-smoothing: antialiased;
-opacity: .9;
-font-weight: 600;
+
+/*
+calendar tooltip
+*/
+
+.tribe-event-description {
+	display: inline-block;
+	width:100%;
 }
-.navbar-harvest .navbar-inner .nav li a:hover {
-background: #f67d0f;
--webkit-box-shadow: none;
--moz-box-shadow: none;
-box-shadow: none;
-color: #fff;
-opacity: 1;
-}
+

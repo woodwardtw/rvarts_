@@ -46,7 +46,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 
 					// The Reviews Query + the hashtag - shows only the first two submitted
 					$args = array( 
-						'category_name' => 'reviews',
+						'category_name' => 'reviews+gold',
 						'tag' => $value,
 						'posts_per_page' => 2,
 						'order' => 'ASC',
@@ -104,7 +104,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 
 					// The interviews Query + the hashtag - shows only the first two submitted
 					$args = array( 
-						'category_name' => 'interviews',
+						'category_name' => 'interviews+gold',
 						'tag' => $value,
 						'posts_per_page' => 2,
 						'order' => 'ASC',
@@ -163,7 +163,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 
 					// The features Query + the hashtag - shows only the first two submitted
 					$args = array( 
-						'category_name' => 'features',
+						'category_name' => 'features+gold',
 						'tag' => $value,
 						'posts_per_page' => 2,
 						'order' => 'ASC',

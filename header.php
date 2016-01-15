@@ -14,7 +14,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -28,7 +28,7 @@
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
 		<div class="row">
-			<div class="site-header-inner col-sm-12">
+			<div class="site-header-inner col-sm-12 col-md-12">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<img class="rva" src="<?php bloginfo('template_directory'); ?>/imgs/RVArts_Logo75.jpg">
 			</a>
@@ -74,37 +74,37 @@
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>-->
 					</div>
 					<!-- The WordPress Menu goes here and prents the main menu to logged in users while presenting a menu (which must be) titled guest-menu to nonlogged in users -->
-					<div class="col-md-offset-3">
-					<?php 
-					if ( is_user_logged_in() )
-					{
-					wp_nav_menu(
-						array(
-							'theme_location' 	=> 'primary',
-							'depth'             => 2,
-							'container'         => 'div',
-							'container_class'   => 'collapse navbar-collapse',
-							'menu_class' 		=> 'nav navbar-nav',
-							'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-							'menu_id'			=> 'main-menu',
-							'walker' 			=> new wp_bootstrap_navwalker()
-						)
-					); }
+						<div class="col-md-offset-3">
+						<?php 
+						if ( is_user_logged_in() )
+						{
+						wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary',
+								'depth'             => 2,
+								'container'         => 'div',
+								'container_class'   => 'collapse navbar-collapse',
+								'menu_class' 		=> 'nav navbar-nav',
+								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+								'menu_id'			=> 'main-menu',
+								'walker' 			=> new wp_bootstrap_navwalker()
+							)
+						); }
 
-					else {wp_nav_menu(
-						array(
-							'theme_location' 	=> 'primary',
-							'depth'             => 2,
-							'container'         => 'div',
-							'container_class'   => 'collapse navbar-collapse',
-							'menu_class' 		=> 'nav navbar-nav',
-							'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-							'menu'			=> 'guest-menu',
-							'walker' 			=> new wp_bootstrap_navwalker()
-						)
-					); }
-					 ?>
-				</div>
+						else {wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary',
+								'depth'             => 2,
+								'container'         => 'div',
+								'container_class'   => 'collapse navbar-collapse',
+								'menu_class' 		=> 'nav navbar-nav',
+								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+								'menu'			=> 'guest-menu',
+								'walker' 			=> new wp_bootstrap_navwalker()
+							)
+						); }
+						 ?>
+					</div>
 				</div><!-- .navbar -->
 			</div>
 		</div>

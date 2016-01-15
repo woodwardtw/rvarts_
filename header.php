@@ -30,7 +30,7 @@
 		<div class="row">
 			<div class="site-header-inner col-sm-12">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/imgs/RVArts_Logo75.jpg">
+				<img class="rva" src="<?php bloginfo('template_directory'); ?>/imgs/RVArts_Logo75.jpg">
 			</a>
 
 				<!--<?php $header_image = get_header_image();
@@ -55,11 +55,11 @@
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
 		<div class="row">
-			<div class="site-navigation-inner col-sm-12">
+			<div class="site-navigation-inner col-sm-12 col-md-10">
 				<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 					<?php 
 					  // Fix menu overlap bug..
-					  if ( is_admin_bar_showing() ) echo '<div style="min-height: 28px;"></div>'; 
+					  if ( is_admin_bar_showing() ) echo '<div class="hack"></div>'; 
 					?>
 					<div class="navbar-header">
 						<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -69,13 +69,16 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-	
+						
 						<!-- Your site title as branding in the menu 
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>-->
 					</div>
-
-					<!-- The WordPress Menu goes here -->
-					<?php wp_nav_menu(
+					<!-- The WordPress Menu goes here and prents the main menu to logged in users while presenting a menu (which must be) titled guest-menu to nonlogged in users -->
+					<div class="col-md-offset-3">
+					<?php 
+					if ( is_user_logged_in() )
+					{
+					wp_nav_menu(
 						array(
 							'theme_location' 	=> 'primary',
 							'depth'             => 2,
@@ -86,8 +89,22 @@
 							'menu_id'			=> 'main-menu',
 							'walker' 			=> new wp_bootstrap_navwalker()
 						)
-					); ?>
+					); }
 
+					else {wp_nav_menu(
+						array(
+							'theme_location' 	=> 'primary',
+							'depth'             => 2,
+							'container'         => 'div',
+							'container_class'   => 'collapse navbar-collapse',
+							'menu_class' 		=> 'nav navbar-nav',
+							'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+							'menu'			=> 'guest-menu',
+							'walker' 			=> new wp_bootstrap_navwalker()
+						)
+					); }
+					 ?>
+				</div>
 				</div><!-- .navbar -->
 			</div>
 		</div>

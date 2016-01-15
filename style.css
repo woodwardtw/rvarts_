@@ -42,6 +42,9 @@ Credits:
 /* My Minimal WordPress Styling comes here */
 
 /* This is a small security for too long strings titles */
+
+
+
 body {
 	word-wrap: break-word;
     padding-top: 50px;
@@ -110,6 +113,7 @@ img[class*="wp-image-"] {
 .gallery-caption {
 	display: block;
 }
+
 
 /* Make sure embeds and iframes fit their containers */
 embed,
@@ -322,7 +326,7 @@ front page
 
 .front-day, .front-day a {
 	color:#000;
-	font-size:1.5em;
+	font-size:2em;
 	text-align: center;
 	padding-top:5px;
 	padding-left: 11px;
@@ -330,7 +334,7 @@ front page
 }
 
 .front-month, .front-month a {
-	font-size:1em;
+	font-size:1.2em;
 	text-transform: uppercase;
 	text-align: center;
 	padding-left: 8px;
@@ -341,6 +345,9 @@ front page
 	font-size:1.1em;
 	padding-top: 8px;
 	font-weight: 900;
+	text-transform: uppercase;
+	    height: 80px;
+    overflow: hidden;
 }
 
 .front-location .tribe-country-name, .front-location .tribe-region, .front-location .tribe-locality, .front-location .tribe-delimiter, .front-location .tribe-postal-code {
@@ -390,8 +397,28 @@ front page
 
 .front h2 {
 	color: #E11936;
+	padding-left: 8px;
 }
 
+.this-week {
+	background-color: #2EAEBF;
+	margin-left:20px;
+	color:#fff;
+	padding:5px;
+}
+
+h2.this-week {
+	color:#fff;
+}
+
+img.rva {
+	padding-top: 10px;
+	margin-left: 25px;
+}
+
+.sorry {
+	margin-bottom: 40px;
+}
 
 @media(max-width:767px){
 
@@ -403,14 +430,30 @@ front page
 	margin-top:-100px;
 }
 	.week {
-			margin-left: -100px;
+			margin-left: -40px;
+			margin-top: 10px;
 	}
 
-	.week .front-location, .week .front-event-title ,.week .front-event-title a, .week .front-date {
+ .week .front-event-title {
 			background-color:rgba(255, 255, 255, 0.6); 
 	}
-
+	.small {
+		height:100%;
+	}
+	.hack {
+		display: none;
+	}
 	
+}
+
+@media(min-width: 767px){
+	.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group {
+	min-height: 400px;
+	}
+	.hack {
+		min-height: 28px;
+	}
+
 }
 
 
@@ -484,10 +527,21 @@ single page specific
 
 .tribe-events-single-section-title {
 	font-size: 1.5em;
-	color:#666;
 	padding:5px;
-	border-bottom: 2px solid #efefef;
+	background-color: #2EAEBF;
 	text-transform: uppercase;
+	color:#fff;
+}
+
+.tribe-events-related-events-title {
+	color:#fff;
+	padding:5px;
+	background-color: #2EAEBF;
+	text-transform: uppercase;
+}
+
+.tribe-events-single-event-description {
+	display:inline-block;
 }
 
 /*
@@ -504,12 +558,15 @@ nav bar
 
 .navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 	border:1px solid #E11936;
+	text-transform: uppercase;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-	background-color: #fff;
-	color:#E11936;
+	background-color: #E11936;
+	color:#fff;
 	border-bottom: 1px solid #E11936;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 /*

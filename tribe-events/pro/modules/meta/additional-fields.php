@@ -64,7 +64,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 								$formurl = site_url('/wp-content/themes/rvarts/create_post.php');
 								echo $writesomething;
 								echo '<br/>
-								<form action="'. $formurl .'" method="post">
+								<form action="'.htmlspecialchars( $formurl ).'" method="post">
 								<input type="hidden" name="postcategory" value="reviews"> 
 								<input type="hidden" name="posttag" value="'. $value .'"> 
 								<input type="submit" class="button" name="submit" value="Write a review" />
@@ -121,7 +121,7 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 								$formurl = site_url('/wp-content/themes/rvarts/create_post.php');
 								echo $writesomething;
 								echo '<br/>
-								<form action="'. $formurl .'" method="post">
+								<form action="'.htmlspecialchars( $formurl ).'" method="post">
 								<input type="hidden" name="postcategory" value="interviews"> 
 								<input type="hidden" name="posttag" value="'. $value .'"> 
 								<input type="submit" class="button" name="submit" value="Write an interview" />
@@ -177,8 +177,12 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 						$writesomething = 'We need 2 posts but found ' . $found_posts . '. You should write one.';
 							$formurl = site_url('/wp-content/themes/rvarts/create_post.php');
 								echo $writesomething;
+								?>
+							
+
+					<?php 
 								echo '<br/>
-								<form action="'. $formurl .'" method="post">
+								<form action="'.htmlspecialchars( $formurl ).'" method="post">
 								<input type="hidden" name="postcategory" value="features"> 
 								<input type="hidden" name="posttag" value="'. $value .'"> 
 								<input type="submit" class="button" name="submit" value="Write a feature" />

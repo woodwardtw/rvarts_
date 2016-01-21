@@ -169,7 +169,7 @@ $proj_events = tribe_get_events( array(
 
 	?>
 	<div class="row">	
-		<h2 class="this-week">ONGOING EVENTS</h2>
+		<h2 class="this-week">ONGOING EVENTS </h2>
 		<?php while( $proj_events->have_posts() ) : $proj_events->the_post(); ?>
 		<div class="col-md-2">
 			<div class="front-card small">

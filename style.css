@@ -43,7 +43,10 @@ Credits:
 
 /* This is a small security for too long strings titles */
 
-
+/*[class^="col"] {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+*/
 
 body {
 	word-wrap: break-word;
@@ -443,7 +446,12 @@ img.rva {
 	.hack {
 		display: none;
 	}
-	
+	.front-event-title{
+		margin-left: 30px;
+	}
+	.small {
+		height:300px;
+	}
 }
 
 @media(min-width: 767px){
@@ -453,7 +461,7 @@ img.rva {
 	.hack {
 		min-height: 28px;
 	}
-
+	
 }
 
 

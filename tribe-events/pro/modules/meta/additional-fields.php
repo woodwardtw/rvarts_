@@ -25,12 +25,12 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 			<dd class="tribe-meta-value tweet-height">
 
 			<!-- Twitter button  and search display (generic at the moment)-->
-			 <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="<?php tribe_get_events_link() ?>" data-text="I'm at <?php the_title();?>" data-via="RVA2Z" data-size="large" data-hashtags="rvarts, <?php echo $value;?> ">Tweet</a>
+			 <a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="<?php tribe_get_events_link() ?>" data-text="I'm at <?php the_title();?>" data-via="RVA2Z" data-size="large" data-hashtags="rvarts, <?php echo substr($value, 1) ;?> ">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				<div class="tweet-term">
 				<?php
 				// This can hold HTML. The values are cleansed upstream
-				echo "#".$value;
+				echo $value;
 				?>
 				</div>
 			</dd>

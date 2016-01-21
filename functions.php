@@ -23,6 +23,14 @@ if ( ! function_exists( '_tk_setup' ) ) :
 add_image_size( 'front-page-thumb', 555, 312, true );
 
 
+add_action('wp_enqueue_scripts', 'enqueue_month_view_scripts');
+function enqueue_month_view_scripts() {
+    if ( is_front_page() ) {
+        Tribe__Events__Template_Factory::asset_package('ajax-calendar');
+ Tribe__Events__Template_Factory::asset_package('events-css');
+    }
+}
+
 function _tk_setup() {
 	global $cap, $content_width;
 

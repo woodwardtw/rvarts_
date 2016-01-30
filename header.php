@@ -24,33 +24,6 @@
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>
 
-<header id="masthead" class="site-header" role="banner">
-<?php // substitute the class "container-fluid" below if you want a wider content area ?>
-	<div class="container">
-		<div class="row">
-			<div class="site-header-inner col-sm-12 col-md-12">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img class="rva" src="<?php bloginfo('template_directory'); ?>/imgs/RVArts_Logo75.jpg">
-			</a>
-
-				<!--<?php $header_image = get_header_image();
-				if ( ! empty( $header_image ) ) { ?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-					</a>
-				<?php } // end if ( ! empty( $header_image ) ) ?>
-
-
-				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="lead"><?php bloginfo( 'description' ); ?></p>-->
-				</div>
-
-			</div>
-		</div>
-	</div><!-- .container -->
-</header><!-- #masthead -->
-
 <nav class="site-navigation">
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
@@ -74,7 +47,7 @@
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>-->
 					</div>
 					<!-- The WordPress Menu goes here and prents the main menu to logged in users while presenting a menu (which must be) titled guest-menu to nonlogged in users -->
-						<div class="col-md-offset-2 col-sm-offset-0 col-lg-offset-3">
+						<div class="col-md-offset-1 col-sm-offset-0 col-lg-offset-1">
 						<?php 
 						if ( is_user_logged_in() )
 						{
@@ -112,8 +85,27 @@
 </nav><!-- .site-navigation -->
 
 <div class="main-content">
+
+	<!-- .container -->
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
 		<div class="row">
 			<div id="content" class="main-content-inner col-sm-12 col-md-10">
+				<?php $header_image = get_header_image();
+				if ( ! empty( $header_image ) ) { ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+					</a>
+				<?php } // end if ( ! empty( $header_image ) ) ?>
+
+
+				<div class="site-branding">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<img class="rva" src="<?php bloginfo('template_directory'); ?>/imgs/RVArts_Logo75.jpg">
+			</a>
+
+			</div>
+		</div>
+		</div>
+		<div class="row">
 

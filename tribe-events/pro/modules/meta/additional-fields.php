@@ -214,3 +214,62 @@ if ( ! isset( $fields ) || empty( $fields ) || ! is_array( $fields ) ) {
 			</dd>
 		</dl>
 </div>	
+
+<div class="tribe-events-meta-group tribe-events-meta-group-details">
+	<h3 class="tribe-events-single-section-title"> Responses </h3>
+		<dl>
+			<dd class="tribe-meta-value">
+				<?php
+
+					// The features Query + the hashtag - shows only the first two submitted
+					$args = array( 
+						'category_name' => 'responses+gold',
+						'tag' => $value,
+						'posts_per_page' => -1,
+						);
+
+					$the_query = new WP_Query( $args );
+					//only display option to write a post if user is logged in	
+					if ( is_user_logged_in() ) {
+
+						$found_posts = $the_query->found_posts;
+						$writesomething = 'We need responses. You should write one.';
+							$formurl = site_url('/wp-content/themes/rvarts/create_post.php');
+								echo $writesomething;
+								?>
+							
+
+					<?php 
+								echo '<br/>
+								<form action="'.htmlspecialchars( $formurl ).'" method="post">
+								<input type="hidden" name="postcategory" value="responses"> 
+								<input type="hidden" name="posttag" value="'. $value .'"> 
+								<input type="submit" class="button" name="submit" value="Write a response" />
+								</form>
+								';
+
+							}
+							else{
+								//just roll on
+							}
+					
+
+					// The Loop
+					if ( $the_query->have_posts() ) {
+						while ( $the_query->have_posts() ) {
+							$the_query->the_post();
+							echo '<a href="' . get_the_permalink() . '"><div class="review">';
+							echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="review_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
+							echo '</div></a>';
+						}
+					} else {
+						// no posts found
+						echo ' No posts found';						
+					}
+					/* Restore original Post Data */
+					wp_reset_postdata();
+
+					?>
+			</dd>
+		</dl>
+</div>	

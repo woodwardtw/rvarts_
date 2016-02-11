@@ -45,7 +45,7 @@ $proj_events = tribe_get_events( array(
 			                <a href="<?php the_permalink(); ?>"> 
 			                <?php 
 			                if ( has_post_thumbnail() ) {
-			                	the_post_thumbnail('front-page-thumb',array( 'class' => 'img-front front-page-thumb' ));
+			                	the_post_thumbnail('front-page-thumb',array( 'class' => 'img-front responsive front-page-thumb' ));
 			                	} else { 
 									echo '<img src="'. htmlspecialchars(site_url('/wp-content/themes/rvarts/imgs/default-thumb-big.jpg')).'" class="img-front front-page-thumb wp-post-image" />';
 								};?>
@@ -118,7 +118,7 @@ $proj_events = tribe_get_events( array(
 			<div class="front-card small">
 			<a href="<?php the_permalink(); ?>"> 
 				<?if ( has_post_thumbnail() ) {
-								the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' ));
+								the_post_thumbnail('thumbnail' , array( 'class' => 'img-front-small ' ));
 								} else { 
 									echo '<img src="'. htmlspecialchars(site_url('/wp-content/themes/rvarts/imgs/default-thumb.jpg')).'" class="img-front-thumb" width="150" height="150" />';
 								};	?>		    </a>

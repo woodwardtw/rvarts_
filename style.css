@@ -421,6 +421,12 @@ img.rva {
 	margin-bottom: 40px;
 }
 
+.img-front, .img-front-small {
+	padding:10px;
+}
+
+
+
 @media(max-width:767px){
 
 	.front-event-title, .front-event-title a{
@@ -450,11 +456,16 @@ img.rva {
 	.small {
 		height:300px;
 	}
+
+	.img-front-small {
+		width:250px;
+		height:250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
-.img-front, .img-front-small {
-	padding:10px;
-}
+
 
 @media(min-width: 767px){
 	.tribe-events-event-meta .column, .tribe-events-event-meta .tribe-events-meta-group {
@@ -467,8 +478,12 @@ img.rva {
 	.img-front{
 	padding:10px;
 	height: 185px;
-	width: 325px;
+	width: 100%;
 }
+	.img-front-small {
+		height: 150px;
+		width: 150px;
+	}
 	
 }
 

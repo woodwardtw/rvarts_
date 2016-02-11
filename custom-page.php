@@ -43,7 +43,12 @@ $proj_events = tribe_get_events( array(
 		            <div class="col-md-4 col-xs-12">
 			            <div class="front-card">
 			                <a href="<?php the_permalink(); ?>"> 
-			                <?php the_post_thumbnail('front-page-thumb',array( 'class' => 'img-front front-page-thumb' ));?>
+			                <?php 
+			                if ( has_post_thumbnail() ) {
+			                	the_post_thumbnail('front-page-thumb',array( 'class' => 'img-front front-page-thumb' ));
+			                	} else { 
+									echo '<img src="'. htmlspecialchars(site_url('/wp-content/themes/rvarts/imgs/default-thumb-big.jpg')).'" class="img-front front-page-thumb wp-post-image" />';
+								};?>
 			                </a>
 			                <a href="<?php the_permalink(); ?>"> 
 			                <div class="row front-date-row">
@@ -112,8 +117,11 @@ $proj_events = tribe_get_events( array(
 		<div class="col-md-2">
 			<div class="front-card small">
 			<a href="<?php the_permalink(); ?>"> 
-		    	<?php the_post_thumbnail('thumbnail',array( 'class' => 'img-front' ));?>
-		    </a>
+				<?if ( has_post_thumbnail() ) {
+								the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' ));
+								} else { 
+									echo '<img src="'. htmlspecialchars(site_url('/wp-content/themes/rvarts/imgs/default-thumb.jpg')).'" class="img-front-thumb" width="150" height="150" />';
+								};	?>		    </a>
 		    <a href="<?php the_permalink(); ?>"> 
 		        <div class="row front-date-row week">
 		            <div class="col-md-12 front-date">
@@ -174,7 +182,12 @@ $proj_events = tribe_get_events( array(
 		<div class="col-md-2">
 			<div class="front-card small">
 			<a href="<?php the_permalink(); ?>"> 
-		    	<?php the_post_thumbnail('thumbnail',array( 'class' => 'img-front' ));?>
+			
+		    	<?if ( has_post_thumbnail() ) {
+								the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' ));
+								} else { 
+									echo '<img src="'. htmlspecialchars(site_url('/wp-content/themes/rvarts/imgs/default-thumb.jpg')).'" class="img-front" width="150" height="150" />';
+								};	?>
 		    </a>
 		    <a href="<?php the_permalink(); ?>"> 
 		        <div class="row front-date-row week">

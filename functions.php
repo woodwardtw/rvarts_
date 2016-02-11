@@ -31,6 +31,16 @@ function enqueue_month_view_scripts() {
     }
 }
 
+function enqueue_social_view_scripts() {
+    if ( is_page_template('social-page') ) {
+        wp_register_script('codebird-js', ( get_bloginfo('stylesheet_url') . '/js/codebird-js.js'), true); //first register your custom script
+		wp_enqueue_script('codebird-js'); 
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_social_view_scripts' );
+
+
 function _tk_setup() {
 	global $cap, $content_width;
 
@@ -131,6 +141,73 @@ function _tk_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
+
+function getUsersByRole( $role ) {
+	// find all users with given role
+	// via http://sltaylor.co.uk/blog/get-wordpress-users-by-role/
+	
+	if ( class_exists( 'WP_User_Search' ) ) {
+		$wp_user_search = new WP_User_Search( '', '', $role );
+		$userIDs = $wp_user_search->get_results();
+	} else {
+		global $wpdb;
+		$userIDs = $wpdb->get_col('
+			SELECT ID
+			FROM '.$wpdb->users.' INNER JOIN '.$wpdb->usermeta.'
+			ON '.$wpdb->users.'.ID = '.$wpdb->usermeta.'.user_id
+			WHERE '.$wpdb->usermeta.'.meta_key = \''.$wpdb->prefix.'capabilities\'
+			AND '.$wpdb->usermeta.'.meta_value LIKE \'%"'.$role.'"%\'
+		');
+	}
+	return $userIDs;
+}
+
+function midea_list_authors($user_role='author', $show_fullname = true) {
+	// Generate a list of authors for a given role
+	// default is to list authors and show full name
+	
+	global $wpdb;
+	
+	$blog_url = get_bloginfo('url'); // store base URL of blog
+	$holding_pen = array(); // this is cheap, a holder for author data
+ 
+ 	echo '<ul>';
+ 	
+	// get array of all author ids for a role
+	$authors = getUsersByRole( $user_role );
+		
+	foreach ( $authors as $item ) {
+	
+		// get number of posts by this author; custom query
+		$post_count = $wpdb->get_results("SELECT COUNT( * ) as cnt 
+		FROM  $wpdb->posts
+		WHERE  post_author =" . $item . "
+		AND  post_type =  'tribe_events'
+		AND  post_status =  'publish'");
+
+		// only output authors with posts; ugly way to get to the result, but it works....
+		
+		if ($post_count[0]->cnt) {
+
+			// load info on this user
+			$author = get_userdata( $item);
+						
+			// store output in temp array; we use last names as an index in this array
+			$holding_pen[$author->last_name] =  '<li><a href="' . $blog_url . '/author/'  . $author->user_login  . '"> ' . $author->display_name . ' (' . $post_count[0]->cnt . ')</a> </li>';
+		}
+
+	}
+	
+	// now sort the array on the index to get alpha order
+	ksort($holding_pen);
+	
+	// now we can spit the output out.
+	foreach ($holding_pen as $key=>$value) {
+		echo $value;
+	}
+	echo '</ul>';
+};
+
 
 /**
  * Implement the Custom Header feature.

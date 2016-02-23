@@ -47,7 +47,7 @@
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>-->
 					</div>
 					<!-- The WordPress Menu goes here and prents the main menu to logged in users while presenting a menu (which must be) titled guest-menu to nonlogged in users -->
-						<div class="col-md-offset-1 col-sm-offset-0 col-lg-offset-1">
+						<div class="balance">
 						<?php 
 						if ( is_user_logged_in() )
 						{
